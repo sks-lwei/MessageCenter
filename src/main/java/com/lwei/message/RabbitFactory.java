@@ -1,5 +1,8 @@
 package com.lwei.message;
 
+import com.lwei.message.instance.MessageHandler;
+import com.lwei.message.instance.SimpleMessage;
+
 /**
  * RabbitMQ工厂
  *
@@ -8,7 +11,7 @@ package com.lwei.message;
  */
 public class RabbitFactory {
 
-    public void getSimpleInstance(String queueName){
-
+    public static MessageHandler getSimpleInstance(String queueName){
+        return new SimpleMessage(queueName);
     }
 }
